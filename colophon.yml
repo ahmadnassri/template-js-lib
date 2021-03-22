@@ -1,0 +1,8 @@
+version: 2.0
+
+id: template-template
+
+about:
+  title: Template for templates
+  description: A template for GitHub Template Repositories!
+  repository: ahmadnassri/template-template

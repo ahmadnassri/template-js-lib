@@ -1,0 +1,26 @@
+# ----------------------------------------------------------- #
+# Note: this file originates in ahmadnassri/template-template #
+# ----------------------------------------------------------- #
+
+name: template-sync
+
+on:
+  pull_request:
+
+  push:
+    branches: [ master ]
+
+jobs:
+  template-sync:
+    timeout-minutes: 20
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ahmadnassri/action-workflow-queue@v1
+
+      - uses: actions/checkout@v2
+
+      - uses: ahmadnassri/action-template-repository-sync@v1
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
