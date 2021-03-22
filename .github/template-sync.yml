@@ -1,10 +1,8 @@
-additional:
-  # temporarily include repos manually # https://github.com/github/docs/issues/3630
-  - "template-*"
-
 files:
+  - "!**.js"
   - "!README.md"
-  - "!docs/**"
+  - "!docs/README.md"
   - "!colophon.yml"
-  - "!docker-compose.yml"
+  - "!package*.json"
+  - "!.github/matrix.json"
   - "!**/template-sync.yml"

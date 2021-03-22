@@ -1,0 +1,43 @@
+{
+  "version": "0.0.0-semantically-released",
+  "name": "@ahmadnassri/template-js-lib",
+  "description": "node library project template",
+  "author": "Ahmad Nassri <email@ahmadnassri.com> (https://www.ahmadnassri.com)",
+  "homepage": "https://github.com/ahmadnassri/template-js-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadnassri/template-js-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadnassri/template-js-lib/issues"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "exports": "./dist/index.modern.js",
+  "module": "dist/index.module.js",
+  "umd": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "test": "tap test --no-coverage",
+    "test:watch": "tap test --watch",
+    "test:ci": "tap test --100",
+    "test:report": "opener coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0",
+    "playwright": "^1.9.2",
+    "sinon": "^9.2.4",
+    "tap": "^14.11.0"
+  }
+}

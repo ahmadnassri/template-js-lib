@@ -1,14 +1,12 @@
-# ----------------------------------------------------------- #
-# Note: this file originates in ahmadnassri/template-template #
-# ----------------------------------------------------------- #
-
 name: template-sync
 
 on:
   pull_request:
 
-  push:
+  workflow_run:
+    workflows: [ release ]
     branches: [ master ]
+    types: [ completed ]
 
 jobs:
   template-sync:
@@ -17,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: ahmadnassri/action-workflow-run-wait@v1
+
       - uses: ahmadnassri/action-workflow-queue@v1
 
       - uses: actions/checkout@v2

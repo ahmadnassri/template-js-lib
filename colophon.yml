@@ -1,8 +1,8 @@
 version: 2.0
 
-id: template-template
+id: template-js-lib
 
 about:
-  title: Template for templates
-  description: A template for GitHub Template Repositories!
-  repository: ahmadnassri/template-template
+  title: JavaScript Library Template
+  description: Universal JavaScript library project template
+  repository: ahmadnassri/template-lib-lib
