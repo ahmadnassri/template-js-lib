@@ -83,16 +83,16 @@ use [Docker Compose][] to run tasks locally:
 > Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
 
 [license-url]: LICENSE
-[license-img]: https://badgen.net/github/license/ahmadnassri/template-lib-lib
+[license-img]: https://badgen.net/github/license/ahmadnassri/template-js-lib
 
-[release-url]: https://github.com/ahmadnassri/template-lib-lib/releases
-[release-img]: https://badgen.net/github/release/ahmadnassri/template-lib-lib
+[release-url]: https://github.com/ahmadnassri/template-js-lib/releases
+[release-img]: https://badgen.net/github/release/ahmadnassri/template-js-lib
 
-[super-linter-url]: https://github.com/ahmadnassri/template-lib-lib/actions?query=workflow%3Asuper-linter
-[super-linter-img]: https://github.com/ahmadnassri/template-lib-lib/workflows/super-linter/badge.svg
+[super-linter-url]: https://github.com/ahmadnassri/template-js-lib/actions?query=workflow%3Asuper-linter
+[super-linter-img]: https://github.com/ahmadnassri/template-js-lib/workflows/super-linter/badge.svg
 
-[test-url]: https://github.com/ahmadnassri/template-lib-lib/actions?query=workflow%3Atest
-[test-img]: https://github.com/ahmadnassri/template-lib-lib/workflows/test/badge.svg
+[test-url]: https://github.com/ahmadnassri/template-js-lib/actions?query=workflow%3Atest
+[test-img]: https://github.com/ahmadnassri/template-js-lib/workflows/test/badge.svg
 
-[semantic-url]: https://github.com/ahmadnassri/template-lib-lib/actions?query=workflow%3Arelease
+[semantic-url]: https://github.com/ahmadnassri/template-js-lib/actions?query=workflow%3Arelease
 [semantic-img]: https://badgen.net/badge/📦/semantically%20released/blue
