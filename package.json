@@ -25,6 +25,7 @@
   "exports": "./dist/index.modern.js",
   "module": "dist/index.module.js",
   "umd": "dist/index.umd.js",
+  "amdName": "Lib",
   "scripts": {
     "build": "microbundle",
     "test": "tap test --no-coverage",
