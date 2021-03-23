@@ -27,6 +27,8 @@ jobs:
         with:
           submodules: true
 
+      - run: npm run build
+
       - id: release
         uses: ahmadnassri/action-semantic-release@v1
         with:
@@ -49,10 +51,13 @@ jobs:
         with:
           submodules: true
 
+      - run: npm run build
+
       - uses: ahmadnassri/action-github-registry-npm-proxy@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
           scope: ${{ github.repository_owner }}
+
 
       - name: publish to github registry
         run: |
