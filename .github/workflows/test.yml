@@ -77,4 +77,5 @@ jobs:
       - uses: microsoft/playwright-github-action@v1
 
       - run: npm ci
+      - run: npm run build
       - run: npm run test:ci
