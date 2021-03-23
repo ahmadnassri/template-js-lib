@@ -27,6 +27,12 @@ jobs:
         with:
           submodules: true
 
+      - uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: release-${{ hashFiles('**/package-lock.json') }}
+
+      - run: npm ci
       - run: npm run build
 
       - id: release
@@ -51,6 +57,12 @@ jobs:
         with:
           submodules: true
 
+      - uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: release-${{ hashFiles('**/package-lock.json') }}
+
+      - run: npm ci
       - run: npm run build
 
       - uses: ahmadnassri/action-github-registry-npm-proxy@v2
@@ -61,6 +73,5 @@ jobs:
 
       - name: publish to github registry
         run: |
-          jq '.name = "@'${GITHUB_REPOSITORY/node-/}'"' package.json > /tmp/package.json; mv /tmp/package.json .
           npm version --no-git-tag-version v${{ needs.release.outputs.version }}
           npm publish

@@ -27,7 +27,6 @@
   "umd": "dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
-    "prepare": "npm run build",
     "test": "tap test --no-coverage",
     "test:watch": "tap test --watch",
     "test:ci": "tap test --100",
