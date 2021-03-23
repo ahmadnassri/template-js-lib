@@ -65,3 +65,33 @@ use [Docker Compose] to run tasks locally:
 [semantic-release]: https://github.com/marketplace/actions/conventional-semantic-release
 [super-linter]: https://github.com/github/super-linter
 [Conventional Commits]: https://www.conventionalcommits.org/en/v1.0.0/
+
+## Install
+
+```bash
+npm install template-js-lib
+```
+
+### Import
+
+```js
+import * as Lib from '@ahmadnassri/template-js-lib'
+
+Lib() // returns "hello world"
+```
+
+### Require
+
+```js
+const Lib = require('@ahmadnassri/template-js-lib')
+
+Lib() // returns "hello world"
+```
+
+### Browser
+
+```html
+<script src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.umd.js">// UMD bundle</script>
+<script type="module" src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.module.mjs">// ESM bundle</script>
+<script type="module" src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.modern.mjs">// ESM for modern browsers</script>
+```

@@ -62,6 +62,36 @@ use [Docker Compose][] to run tasks locally:
 >
 > You should run `docker-compose run readme` after any change to `docs/README.md` and before commit / push
 
+## Install
+
+``` bash
+npm install template-js-lib
+```
+
+### Import
+
+``` js
+import * as Lib from '@ahmadnassri/template-js-lib'
+
+Lib() // returns "hello world"
+```
+
+### Require
+
+``` js
+const Lib = require('@ahmadnassri/template-js-lib')
+
+Lib() // returns "hello world"
+```
+
+### Browser
+
+``` html
+<script src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.umd.js">// UMD bundle</script>
+<script type="module" src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.module.mjs">// ESM bundle</script>
+<script type="module" src="https://unpkg.com/@ahmadnassri/template-js-lib@latest/dist/index.modern.mjs">// ESM for modern browsers</script>
+```
+
   [GitHub Actions]: https://github.com/features/actions
   [conventional-commits]: https://www.conventionalcommits.org/
   [semantic-release]: https://github.com/marketplace/actions/conventional-semantic-release
