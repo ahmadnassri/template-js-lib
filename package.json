@@ -20,12 +20,15 @@
     "src",
     "dist"
   ],
+  "amdName": "Lib",
   "source": "src/index.js",
   "main": "dist/index.js",
-  "exports": "./dist/index.modern.js",
-  "module": "dist/index.module.js",
-  "umd": "dist/index.umd.js",
-  "amdName": "Lib",
+  "exports": {
+    "import": "./dist/index.modern.mjs",
+    "require": "./dist/index.js"
+  },
+  "module": "dist/index.module.mjs",
+  "unpkg": "dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
     "test": "tap test --no-coverage",
