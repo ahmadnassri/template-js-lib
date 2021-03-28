@@ -1,5 +1,10 @@
 {
   "os": ["ubuntu-20.04", "windows-2019", "macos-10.15"],
   "node-version": [12, 14, 15],
-  "browser": ["chromium", "firefox", "webkit"]
+  "browser": ["chromium", "firefox"],
+  "include": [
+    { "os": "macos-10.15", "browser": "webkit", "node-version": 12 },
+    { "os": "macos-10.15", "browser": "webkit", "node-version": 14 },
+    { "os": "macos-10.15", "browser": "webkit", "node-version": 15 }
+  ]
 }
