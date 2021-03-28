@@ -22,6 +22,9 @@ jobs:
 
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
+        with:
+          delay: 60000
+          timeout: 900000
 
       - uses: actions/checkout@v2
         with:
