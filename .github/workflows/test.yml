@@ -51,7 +51,7 @@ jobs:
   test:
     needs: [ strategy, audit ]
 
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     name: ${{ matrix.os }} - node v${{ matrix.node-version }} - ${{ matrix.browser }}
 
