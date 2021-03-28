@@ -29,6 +29,9 @@
     "src",
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "amdName": "TemplateLib",
   "source": "src/index.js",
   "module": "dist/index.module.mjs",
