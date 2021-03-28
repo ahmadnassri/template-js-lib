@@ -1,11 +1,11 @@
-import tap from 'tap'
+import { test, beforeEach, afterEach } from 'tap'
 import { join } from 'path'
 import * as browsers from 'playwright'
 
 let browser, page
 
-tap.beforeEach(async done => {
-  browser = await browsers[process.env.BROWSER || 'chromium'].launch()
+beforeEach(async done => {
+  browser = await browsers[process.env.BROWSER].launch()
   page = await browser.newPage()
 
   await page.goto(`file://${join(__dirname, 'index.html')}`)
@@ -16,12 +16,12 @@ tap.beforeEach(async done => {
   done()
 })
 
-tap.afterEach(async done => {
+afterEach(async done => {
   await browser.close()
   done()
 })
 
-tap.test('simple test', async assert => {
+test('simple test', { skip: !process.env.BROWSER }, async assert => {
   assert.plan(1)
 
   // run in the browser
