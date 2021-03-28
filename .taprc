@@ -6,3 +6,5 @@ coverage: true
 browser: false
 color: true
 coverage-report: html
+nyc-arg:
+  - --exclude=dist
