@@ -20,17 +20,23 @@
     "src",
     "dist"
   ],
-  "amdName": "Lib",
+  "amdName": "TemplateLib",
   "source": "src/index.js",
-  "main": "dist/index.js",
-  "exports": {
-    "import": "./dist/index.modern.mjs",
-    "require": "./dist/index.js"
-  },
   "module": "dist/index.module.mjs",
   "unpkg": "dist/index.umd.js",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./src/index.js"
+    }
+  },
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle src/*.js",
+    "build:test": "npm run build -- --no-sourcemap",
+    "pretest": "npm run build:test",
+    "pretest:ci": "npm run build:test",
+    "pretest:watch": "npm run build:test",
     "test": "tap test --no-coverage",
     "test:watch": "tap test --watch",
     "test:ci": "tap test --100",

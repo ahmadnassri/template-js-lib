@@ -1,5 +1,5 @@
-import { default as Lib } from '..' // eslint-disable-line import/no-named-default
 import tap from 'tap'
+import { join } from 'path'
 import * as browsers from 'playwright'
 
 let browser, page
@@ -7,7 +7,11 @@ let browser, page
 tap.beforeEach(async done => {
   browser = await browsers[process.env.BROWSER || 'chromium'].launch()
   page = await browser.newPage()
-  await page.exposeFunction('Lib', Lib)
+
+  await page.goto(`file://${join(__dirname, 'index.html')}`)
+  await page.addScriptTag({
+    path: join(__dirname, '../dist/index.umd.js')
+  })
 
   done()
 })
@@ -22,7 +26,8 @@ tap.test('simple test', async assert => {
 
   // run in the browser
   const result = await page.evaluate(() => {
-    return window.Lib()
+    const { Lib } = window.TemplateLib
+    return Lib()
   })
 
   assert.equal(result, 'hello world')
