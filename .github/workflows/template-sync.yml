@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
         with:
-          delay: 60000
+          delay: 10000
           timeout: 900000
 
       - uses: ahmadnassri/action-workflow-queue@v1
