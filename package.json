@@ -11,8 +11,17 @@
   "bugs": {
     "url": "https://github.com/ahmadnassri/template-js-lib/issues"
   },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/ahmadnassri"
+  },
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "template",
+    "universal",
+    "javascript",
+    "library"
+  ],
   "engines": {
     "node": ">=12"
   },
