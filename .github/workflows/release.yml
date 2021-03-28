@@ -25,6 +25,7 @@ jobs:
         with:
           delay: 10000
           timeout: 900000
+          ignore-cancelled: true
 
       - uses: actions/checkout@v2
         with:

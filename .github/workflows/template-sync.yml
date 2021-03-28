@@ -19,6 +19,7 @@ jobs:
         with:
           delay: 10000
           timeout: 900000
+          ignore-cancelled: true
 
       - uses: ahmadnassri/action-workflow-queue@v1
 
