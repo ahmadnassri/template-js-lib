@@ -2,8 +2,8 @@
   "os": ["ubuntu-20.04", "windows-2019", "macos-10.15"],
   "node-version": [12, 14, 15],
   "include": [
-    { "os": "ubuntu-20.04", "browser": "chromium", "node-version": 15 },
-    { "os": "ubuntu-20.04", "browser": "firefox", "node-version": 15 },
-    { "os": "macos-10.15", "browser": "webkit", "node-version": 15 }
+    { "name": "browser: chrome", "os": "ubuntu-20.04", "browser": "chromium", "node-version": 15 },
+    { "name": "browser: firefox", "os": "ubuntu-20.04", "browser": "firefox", "node-version": 15 },
+    { "name": "browser: safari", "os": "macos-10.15", "browser": "webkit", "node-version": 15 }
   ]
 }

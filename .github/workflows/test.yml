@@ -53,7 +53,7 @@ jobs:
 
     timeout-minutes: 10
 
-    name: ${{ matrix.os }} - node v${{ matrix.node-version }} - ${{ matrix.browser }}
+    name: ${{ matrix.name || format('node v{0} @ {1}', matrix.node-version, matrix.os) }}
 
     strategy:
       matrix: ${{ fromJSON(needs.strategy.outputs.matrix) }}
