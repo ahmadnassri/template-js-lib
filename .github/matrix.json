@@ -1,9 +1,16 @@
 {
-  "os": ["ubuntu-20.04", "windows-2019", "macos-10.15"],
-  "node-version": [12, 14, 15],
   "include": [
-    { "name": "browser: chrome", "os": "ubuntu-20.04", "browser": "chromium", "node-version": 15 },
-    { "name": "browser: firefox", "os": "ubuntu-20.04", "browser": "firefox", "node-version": 15 },
-    { "name": "browser: safari", "os": "macos-10.15", "browser": "webkit", "node-version": 15 }
+    { "name": "linux: node v12", "os": "ubuntu-20.04", "node-version": 12 },
+    { "name": "linux: node v14", "os": "ubuntu-20.04", "node-version": 14 },
+    { "name": "linux: node v15", "os": "ubuntu-20.04", "node-version": 15 },
+    { "name": "windows: node v12", "os": "windows-2019", "node-version": 12 },
+    { "name": "windows: node v14", "os": "windows-2019", "node-version": 14 },
+    { "name": "windows: node v15", "os": "windows-2019", "node-version": 15 },
+    { "name": "macos: node v12", "os": "macos-10.15", "node-version": 12 },
+    { "name": "macos: node v14", "os": "macos-10.15", "node-version": 14 },
+    { "name": "macos: node v15", "os": "macos-10.15", "node-version": 15 },
+    { "name": "browser: chromium", "os": "ubuntu-20.04", "node-version": 15, "browser": "chromium" },
+    { "name": "browser: firefox", "os": "ubuntu-20.04", "node-version": 15, "browser": "firefox" },
+    { "name": "browser: webkit", "os": "ubuntu-20.04", "node-version": 15, "browser": "webkit"  }
   ]
 }
