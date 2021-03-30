@@ -50,6 +50,7 @@
     "pretest:ci": "npm run build:test",
     "pretest:watch": "npm run build:test",
     "test": "tap test --no-coverage",
+    "test:browser": "BROWSER=chromium tap test --no-coverage",
     "test:watch": "tap test --watch",
     "test:ci": "tap test --100",
     "test:report": "opener coverage/lcov-report/index.html"
