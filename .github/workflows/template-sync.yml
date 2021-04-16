@@ -16,8 +16,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    # listen to pull_request_target but only run on push, pull_request
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    # it listens to pull_request_target but only run on push, pull_request
+    # it will only run for author's own PRs, otherwise, there is no github-token to use!
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
 
     steps:
       - run: echo ::info ::this is a pull_request event
