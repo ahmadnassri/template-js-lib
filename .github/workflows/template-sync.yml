@@ -1,26 +1,35 @@
+# ------------------------------------------------------------- #
+# Note: this file is automatically managed in template-template #
+# ------------------------------------------------------------- #
+
 name: template-sync
 
 on:
   pull_request:
-
-  workflow_run:
-    workflows: [ release ]
-    branches: [ master ]
-    types: [ completed ]
+  pull_request_target:
+  push:
+    branches: master
 
 jobs:
+  is-pull-or-push:
+    timeout-minutes: 5
+
+    runs-on: ubuntu-latest
+
+    # listen to pull_request_target but only run on push, pull_request
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+
+    steps:
+      - run: echo ::info ::this is a pull_request event
+
   template-sync:
+    needs: is-pull-or-push
+
     timeout-minutes: 20
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ahmadnassri/action-workflow-run-wait@v1
-        with:
-          delay: 10000
-          timeout: 900000
-          ignore-cancelled: true
-
       - uses: ahmadnassri/action-workflow-queue@v1
 
       - uses: actions/checkout@v2
