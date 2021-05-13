@@ -74,7 +74,7 @@ jobs:
           path: ~/.npm
           key: ${{ matrix.os }}-${{ matrix.node-version }}-${{ matrix.browser }}-${{ hashFiles('**/package-lock.json') }}
 
-      - uses: microsoft/playwright-github-action@v1
+      - uses: microsoft/playwright-github-action@v1.4.4
 
       - run: npm ci
       - run: npm run test:ci
