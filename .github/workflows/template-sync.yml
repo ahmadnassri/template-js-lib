@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ahmadnassri/action-workflow-queue@v1
+      - uses: ahmadnassri/action-workflow-queue@v1.1
 
       - uses: actions/checkout@v2
 
