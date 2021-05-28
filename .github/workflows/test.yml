@@ -69,7 +69,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: actions/cache@v2.1.4
+      - uses: actions/cache@v2.1.6
         with:
           path: ~/.npm
           key: ${{ matrix.os }}-${{ matrix.node-version }}-${{ matrix.browser }}-${{ hashFiles('**/package-lock.json') }}
