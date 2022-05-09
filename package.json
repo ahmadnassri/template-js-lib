@@ -58,7 +58,7 @@
   "devDependencies": {
     "microbundle": "^0.15.0",
     "playwright": "^1.10.0",
-    "sinon": "^10.0.0",
+    "sinon": "^14.0.0",
     "tap": "^14.11.0"
   }
 }
