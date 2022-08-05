@@ -31,7 +31,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3.0.6
         with:
           path: ~/.npm
           key: release-${{ hashFiles('**/package-lock.json') }}
@@ -61,7 +61,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: actions/cache@v2.1.7
+      - uses: actions/cache@v3.0.6
         with:
           path: ~/.npm
           key: release-${{ hashFiles('**/package-lock.json') }}
