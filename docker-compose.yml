@@ -1,61 +1,61 @@
-# --------------------------------------------------------- #
-# Note: this file originates in ahmadnassri/template-js-lib #
-# --------------------------------------------------------- #
-
-version: '3.8'
-
-x-node: &node
-  tty: true
-  volumes:
-    - type: bind
-      source: .
-      target: /app
-  working_dir: /app
-  command: npm run test
+# --------------------------------------------- #
+# Note: this file originates in template-js-lib #
+# --------------------------------------------- #
 
 services:
   # ---- super-linter ---- #
   lint:
+    profiles: ["dev"]
     image: github/super-linter:v3
     volumes:
-      - ./:/tmp/lint
+      - ./:/github/workspace
     environment:
       RUN_LOCAL: 'true'
       LOG_LEVEL: 'ERROR'
       MULTI_STATUS: 'false'
+      IGNORE_GITIGNORED_FILES: 'true'
+      DEFAULT_WORKSPACE: /github/workspace
+      FILTER_REGEX_EXCLUDE: '/github/workspace/README.md|test/fixtures/*'
 
   # ---- readme generator ---- #
   readme:
-    image: pandoc/core:2.11.4
+    profiles: ["dev"]
+    image: pandoc/core:2.13
     volumes:
       - ./:/data
-    command: >-
-      --metadata-file=colophon.yml
-      --template=docs/README.template
-      --output=README.md
-      --from=gfm
-      --to=gfm
-      --fail-if-warnings
-      --wrap=preserve
-      --reference-links
-      docs/README.md
+    command: --defaults=.pandoc.yml
+
+  app: &app
+    profiles: ["app"]
+    image: node:alpine
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    working_dir: /app
+    command: npm --no-update-notifier run test -- --reporter=classic
 
   test:
-    <<: *node
+    <<: *app
+    profiles: ["test"]
     image: node:alpine
     depends_on:
-      - node12
       - node14
-      - node15
-
-  node12:
-    <<: *node
-    image: node:12-alpine
+      - node16
+      - node18
 
   node14:
-    <<: *node
+    <<: *app
+    profiles: ["test"]
     image: node:14-alpine
 
-  node15:
-    <<: *node
-    image: node:15-alpine
+  node16:
+    <<: *app
+    profiles: ["test"]
+    image: node:16-alpine
+
+  node18:
+    <<: *app
+    profiles: ["test"]
+    image: node:18-alpine
