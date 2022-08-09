@@ -39,6 +39,7 @@
   "scripts": {
     "build": "microbundle src/*.js",
     "build:test": "npm run build -- --no-sourcemap",
+    "pretest:ci": "npm run build:test",
     "test": "BROWSER=${TEST_BROWSER:-chromium} tap test --no-coverage",
     "test:browser": "BROWSER=${TEST_BROWSER:-chromium} tap test --no-coverage",
     "test:watch": "tap test --watch",
