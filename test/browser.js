@@ -1,10 +1,15 @@
-import { test, beforeEach, afterEach } from 'tap'
-import { join } from 'path'
+import tap from 'tap'
+import { fileURLToPath } from 'node:url'
+import { join, dirname } from 'node:path'
 import * as browsers from 'playwright'
+
+// esm workarounds
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 let browser, page
 
-beforeEach(async done => {
+tap.beforeEach(async () => {
   browser = await browsers[process.env.BROWSER].launch()
   page = await browser.newPage()
 
@@ -12,16 +17,11 @@ beforeEach(async done => {
   await page.addScriptTag({
     path: join(__dirname, '../dist/index.umd.js')
   })
-
-  done()
 })
 
-afterEach(async done => {
-  await browser.close()
-  done()
-})
+tap.afterEach(() => browser.close())
 
-test('simple test', { skip: !process.env.BROWSER }, async assert => {
+tap.test('simple test', { skip: !process.env.BROWSER }, async assert => {
   assert.plan(1)
 
   // run in the browser

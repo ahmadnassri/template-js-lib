@@ -1,12 +1,9 @@
 import { test } from 'tap'
 
-import Bundle from '../..'
+import { Lib } from '../../dist/index.mjs'
 
 test('default import', assert => {
-  assert.plan(2)
+  assert.plan(1)
 
-  assert.type(Bundle, Object)
-  assert.match(Bundle, {
-    Lib: Function
-  })
+  assert.type(Lib, Function)
 })

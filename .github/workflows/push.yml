@@ -116,6 +116,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npm run test:ci
+        env:
+          TEST_BROWSER: ${{ matrix.browser }}
 
   release:
     needs:
