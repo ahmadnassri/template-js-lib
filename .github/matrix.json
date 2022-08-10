@@ -1,9 +1,8 @@
 {
   "os": ["ubuntu-latest", "windows-latest", "macos-latest"],
   "node-version": [14, 16, 18],
+  "skip-browsers": "true",
   "include": [
-    { "name": "browser: chromium", "os": "ubuntu-latest", "node-version": 18, "browser": "chromium" },
-    { "name": "browser: firefox", "os": "ubuntu-latest", "node-version": 18, "browser": "firefox" },
-    { "name": "browser: webkit", "os": "ubuntu-latest", "node-version": 18, "browser": "webkit"  }
+    { "name": "with browsers", "os": "ubuntu-latest", "node-version": 18, "skip-browsers": "false" }
   ]
 }

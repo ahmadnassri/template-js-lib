@@ -119,7 +119,7 @@ jobs:
 
       - run: npm run test:ci
         env:
-          BROWSER: ${{ matrix.browser || 'no-browser' }}
+          SKIP_BROWSERS: ${{ matrix.skip-browsers }}
 
   release:
     needs:

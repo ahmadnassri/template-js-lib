@@ -2,6 +2,7 @@
 # Note: this file originates in template-node-lib #
 # ----------------------------------------------- #
 
+jobs: 5
 ts: false
 jsx: false
 flow: false
