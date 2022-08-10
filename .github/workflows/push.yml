@@ -116,11 +116,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npx playwright install-deps
-        if: ${{ matrix.skip-browsers === 'false' }}
+        if: ${{ matrix.with-browsers === 'true' }}
 
       - run: npm run test:ci
         env:
-          SKIP_BROWSERS: ${{ matrix.skip-browsers }}
+          WITH_BROWSERS: ${{ matrix.with-browsers }}
 
   release:
     needs:

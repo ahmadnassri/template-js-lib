@@ -16,7 +16,7 @@ const engines = [
 ]
 
 for (const engine of engines) {
-  test(`test with ${engine}`, { skip: process.env.SKIP_BROWSERS === 'true' }, async assert => {
+  test(`test with ${engine}`, { skip: process.env.WITH_BROWSERS === 'false' }, async assert => {
     browser = await browsers[engine].launch()
     page = await browser.newPage()
 
