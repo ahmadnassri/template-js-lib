@@ -9,6 +9,11 @@ const __dirname = dirname(__filename)
 
 let browser, page
 
+// exit early
+if (['', 'no-browser', undefined].includes(process.env.BROWSER)) process.exit(0)
+
+console.log(process.env.BROWSER)
+
 tap.beforeEach(async () => {
   browser = await browsers[process.env.BROWSER].launch()
   page = await browser.newPage()
