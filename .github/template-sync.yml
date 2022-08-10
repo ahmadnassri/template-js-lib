@@ -4,5 +4,5 @@ files:
   - "!docs/README.md"
   - "!colophon.yml"
   - "!package*.json"
-  - "!.github/matrix.json"
+  - "!.github/test-matrix.json"
   - "!**/template-sync.yml"
