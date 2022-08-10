@@ -116,7 +116,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npx playwright install-deps
-        if: ${{ matrix.with-browsers === 'true' }}
+        if: ${{ matrix.with-browsers == 'true' }}
 
       - run: npm run test:ci
         env:
