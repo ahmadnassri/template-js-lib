@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import { join, dirname } from 'node:path'
-import { createRequire } from 'node:module';
-const require = createRequire(import.meta.url);
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
 
 // esm workarounds
 const __filename = fileURLToPath(import.meta.url)

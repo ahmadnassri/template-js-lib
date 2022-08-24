@@ -20,7 +20,7 @@ for (const engine of engines) {
     browser = await browsers[engine].launch()
     page = await browser.newPage()
 
-    await page.goto(`file://${join(__dirname, 'index.html')}`)
+    await page.goto(`file://${join(__dirname, 'fixtures/index.html')}`)
     await page.addScriptTag({
       path: join(__dirname, '../dist/index.umd.js')
     })
