@@ -20,7 +20,7 @@ jobs:
       repository_default_branch: ${{ steps.metadata.outputs.repository_default_branch }}
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
 
       - id: metadata
         uses: ahmadnassri/action-metadata@v2.1.2
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
 
       - uses: ahmadnassri/action-commit-lint@v2.0.12
         with:
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
 
       - uses: oxsecurity/megalinter/flavors/javascript@v6.20.1
         env:
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
 
       - uses: actions/setup-node@v3.6.0
         with:
@@ -83,7 +83,7 @@ jobs:
       matrix: ${{ steps.parse.outputs.matrix }}
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
       - id: parse
         run: echo "matrix=$(jq -c . < .github/test-matrix.json)" >> "$GITHUB_OUTPUT"
 
@@ -102,7 +102,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
         with:
           submodules: true
 
@@ -146,7 +146,7 @@ jobs:
       version-minor: ${{ steps.release.outputs.release-version-minor }}
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
         with:
           submodules: true
 
@@ -171,7 +171,7 @@ jobs:
     if: ${{ needs.release.outputs.published == 'true' }}
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
         with:
           submodules: true
 
@@ -208,7 +208,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3.5.3
 
       - uses: ahmadnassri/action-template-repository-sync@v2.3.4
         with:
