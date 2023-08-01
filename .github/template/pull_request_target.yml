@@ -2,19 +2,13 @@
 # Note: this file originates in template-template #
 # ----------------------------------------------- #
 
-name: push
+name: pull_request_target
 
-on:
-  - push
-  - workflow_dispatch
+on: pull_request_target
 
 permissions: read-all
 
 jobs:
   main:
-    uses: ahmadnassri/actions/.github/workflows/push-template.yml@master
+    uses: ahmadnassri/actions/.github/workflows/pull-request-target.yml@master
     secrets: inherit
-    permissions:
-      contents: write
-      statuses: write
-      pull-requests: write
